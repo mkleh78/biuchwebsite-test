@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Blog | Optionen strategisch nutzen</title>
-    <meta name="description" content="Blog zum Buch 'Optionen strategisch nutzen' - Wertvolle Tipps und Strategien für den Optionshandel">
+    <title>Psychologie im Optionshandel: Emotionen kontrollieren für bessere Ergebnisse</title>
+    <meta name="description" content="Lernen Sie, wie Disziplin, Routinen und ein klarer Trading-Plan emotionale Fehlentscheidungen im Optionshandel verhindern.">
     
     <link rel="icon" href="Favicon.jpg" type="image/jpeg">
     
@@ -25,19 +25,19 @@
             --text-gray: #555555;
             --black: #000000;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             max-width: 100%;
         }
-        
+
         html {
             font-size: 16px;
             font-size: calc(14px + 0.25vw);
         }
-        
+
         body {
             font-family: 'Roboto', sans-serif;
             line-height: 1.6;
@@ -49,26 +49,26 @@
             overflow-x: hidden;
             width: 100%;
         }
-        
+
         h1 {
             font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
             line-height: 1.2;
         }
-        
+
         h2 {
             font-size: clamp(1.8rem, 3vw + 0.5rem, 2.8rem);
             line-height: 1.2;
         }
-        
+
         h3 {
             font-size: clamp(1.2rem, 2vw + 0.3rem, 1.8rem);
             line-height: 1.3;
         }
-        
+
         p {
             font-size: clamp(0.9rem, 1vw + 0.5rem, 1.1rem);
         }
-        
+
         header {
             background-color: var(--primary);
             color: white;
@@ -78,13 +78,13 @@
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         nav {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .nav-container {
             display: flex;
             justify-content: space-between;
@@ -92,19 +92,19 @@
             flex-wrap: wrap;
             padding: 0 20px;
         }
-        
+
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
             display: flex;
             align-items: center;
         }
-        
+
         .logo img {
             height: 50px;
             max-width: 100%;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
@@ -112,11 +112,11 @@
             margin: 0;
             padding: 0;
         }
-        
+
         .nav-links li {
             margin: 0 0 0 2rem;
         }
-        
+
         .nav-links a {
             color: white;
             text-decoration: none;
@@ -125,12 +125,11 @@
             display: block;
             white-space: nowrap;
         }
-        
+
         .nav-links a:hover {
             color: var(--accent);
         }
-        
-        /* Mobile Menu Styles */
+
         .mobile-menu-toggle {
             display: none;
             font-size: 1.5rem;
@@ -141,12 +140,11 @@
             padding: 0.5rem;
             z-index: 110;
         }
-        
+
         .mobile-menu-toggle:focus {
             outline: none;
         }
-        
-        /* Verbesserte Container und Grid-Layouts */
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -154,7 +152,7 @@
             width: 100%;
             overflow: hidden;
         }
-        
+
         .page-title {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/api/placeholder/1200/300') center/cover no-repeat;
             color: white;
@@ -163,7 +161,7 @@
             border-top: none;
             background-color: #333333;
         }
-        
+
         .page-title h1 {
             margin-bottom: 1rem;
             font-weight: 700;
@@ -175,29 +173,29 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .page-title p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
             padding: 0 10px;
         }
-        
+
         section {
             padding: 5rem 0;
             border-top: 1px solid rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             position: relative;
         }
-        
+
         section:nth-child(odd) {
             background-color: var(--light);
         }
-        
+
         section:nth-child(even) {
             background-color: #e2e2e3;
         }
-        
+
         section h2 {
             text-align: center;
             margin-bottom: 3rem;
@@ -207,104 +205,55 @@
             letter-spacing: 0.05em;
             line-height: 1.2;
         }
-        
-        .blog-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-        
-        .blog-card {
+
+        .blog-content {
+            padding: 2rem;
             background-color: white;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
         }
-        
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .blog-image {
-            height: 200px;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-        .blog-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        .blog-card:hover .blog-image img {
-            transform: scale(1.1);
-        }
-        
-        .blog-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .blog-date {
-            color: var(--text-gray);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .blog-title {
+
+        .blog-content h2 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-            line-height: 1.3;
         }
-        
-        .blog-excerpt {
-            margin-bottom: 1.5rem;
+
+        .blog-content h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .blog-content p {
             color: var(--text-gray);
-            flex-grow: 1;
+            margin-bottom: 1rem;
         }
-        
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.8rem;
-            border-radius: 5px;
+
+        .blog-content ul {
+            list-style-position: inside;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content strong {
+            color: var(--primary);
+        }
+
+        .blog-content a {
+            color: var(--accent);
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            border: 2px solid transparent;
-            font-size: 1rem;
-            align-self: flex-start;
-            margin-top: auto;
         }
-        
-        .btn-primary {
-            background-color: var(--accent);
-            color: var(--black);
-            border: 2px solid var(--accent);
+
+        .blog-content a:hover {
+            text-decoration: underline;
         }
-        
-        .btn-primary:hover {
-            background-color: var(--black);
-            color: var(--accent);
-            border-color: var(--accent);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-        }
-        
+
         footer {
             background-color: var(--primary);
             color: white;
@@ -312,20 +261,20 @@
             text-align: center;
             border-top: none;
         }
-        
+
         .footer-content {
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1.5rem;
         }
-        
+
         .logo-container {
             display: flex;
             align-items: center;
             margin-right: 2rem;
         }
-        
+
         .footer-links {
             display: flex;
             list-style: none;
@@ -334,26 +283,26 @@
             flex-wrap: wrap;
             justify-content: center;
         }
-        
+
         .footer-links li {
             margin: 0 1rem;
         }
-        
+
         .footer-links a {
             color: white;
             text-decoration: none;
             padding: 0.25rem 0;
             display: inline-block;
         }
-        
+
         .footer-links a:hover {
             text-decoration: underline;
         }
-        
+
         .social-icons {
             margin: 1rem 0;
         }
-        
+
         .social-icons a {
             color: white;
             margin: 0 0.8rem;
@@ -362,54 +311,49 @@
             display: inline-block;
             padding: 0.5rem;
         }
-        
+
         .social-icons a:hover {
             color: var(--accent);
         }
-        
+
         .copyright {
             font-size: 0.9rem;
             margin-top: 2rem;
         }
-        
-        @media screen and (max-width: 992px) {
+
+       @media screen and (max-width: 992px) {
             .container {
                 width: 90%;
             }
-            
+
             h1 {
                 font-size: clamp(1.8rem, 3vw + 1rem, 3rem);
             }
-            
+
             h2 {
                 font-size: clamp(1.6rem, 2.5vw + 0.5rem, 2.5rem);
             }
-            
+
             h3 {
                 font-size: clamp(1.1rem, 1.5vw + 0.3rem, 1.5rem);
             }
-            
-            .blog-grid {
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-                gap: 1.5rem;
-            }
         }
-        
+
         @media screen and (max-width: 768px) {
             .mobile-menu-toggle {
                 display: block;
             }
-            
+
             .nav-container {
                 justify-content: center;
                 text-align: center;
             }
-            
+
             .logo {
                 margin: 0 auto;
                 padding: 0.5rem 0;
             }
-            
+
             .nav-links {
                 display: none;
                 position: fixed;
@@ -424,48 +368,242 @@
                 z-index: 100;
                 padding: 2rem;
             }
-            
+
             .nav-links.show {
                 display: flex;
             }
-            
+
             .nav-links li {
                 margin: 1rem 0;
             }
-            
+
             .nav-links a {
                 font-size: 1.2rem;
                 padding: 0.5rem 0;
             }
-            
+
             .mobile-menu-toggle {
                 position: absolute;
                 top: 1.5rem;
                 right: 2rem;
             }
-            
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
         }
-        
+
         @media screen and (max-width: 480px) {
             .page-title {
                 padding: 2.5rem 1rem;
             }
-            
+
             .page-title h1 {
                 font-size: 2rem;
             }
-            
+
             .page-title p {
                 font-size: 1rem;
             }
-            
+
             .btn {
                 padding: 0.7rem 1.4rem;
                 font-size: 0.9rem;
             }
+        }
+        
+        /* Zusätzliche Stile für den erweiterten Artikel */
+        
+        .table-of-contents {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .table-of-contents h3 {
+            margin-bottom: 0.8rem;
+        }
+        
+        .table-of-contents ol {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        
+        .table-of-contents li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .table-of-contents a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .table-of-contents a:hover {
+            text-decoration: underline;
+        }
+        
+        .strategy-box {
+            border: 1px solid #e2e2e3;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+        }
+        
+        .strategy-box h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        .example-box {
+            background-color: rgba(126, 151, 195, 0.1);
+            border-left: 3px solid var(--secondary);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box {
+            background-color: rgba(102, 204, 153, 0.1);
+            border-left: 3px solid var(--success);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background-color: rgba(255, 99, 71, 0.1);
+            border-left: 3px solid tomato;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 0.8rem;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .key-term {
+            font-weight: 600;
+            color: var(--primary);
+            border-bottom: 1px dotted var(--secondary);
+            cursor: help;
+        }
+        
+        .chart-placeholder {
+            background-color: #f5f5f5;
+            border: 1px dashed #ccc;
+            border-radius: 8px;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem 0;
+            color: var(--text-gray);
+        }
+        
+        .cta-box {
+            background-color: rgba(0, 51, 102, 0.05);
+            border: 1px solid var(--primary);
+            padding: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .cta-box h3 {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin-top: 1rem;
+        }
+        
+        .cta-box .btn:hover {
+            background-color: #002244;
+            text-decoration: none;
+        }
+        
+        .highlight-text {
+            font-weight: 500;
+            background-color: rgba(255, 215, 0, 0.2);
+            padding: 0 0.3rem;
+        }
+
+        .score-box {
+            background-color: rgba(0, 51, 102, 0.05);
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .score-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-label {
+            font-size: 1.2rem;
+            color: var(--secondary);
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .metric-card {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.9rem;
+            color: var(--text-gray);
         }
     </style>
 </head>
@@ -495,88 +633,59 @@
 
     <section class="page-title">
         <div class="container">
-            <h1>Blog</h1>
-            <p>Wertvolle Tipps und Strategien für den erfolgreichen Optionshandel</p>
+            <h1>Psychologie im Optionshandel</h1>
+            <p>Mentale Techniken und Routinen für diszipliniertes Trading.</p>
         </div>
     </section>
 
-    <section>
-        <div class="container">
-            <h2>Aktuelle Beiträge</h2>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="blog1.png" alt="Grundlegende Optionsstrategien für Einsteiger" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">28. April 2025</div>
-                        <h3 class="blog-title">Grundlegende Optionsstrategien für Einsteiger</h3>
-                        <p class="blog-excerpt">Ein umfassender Überblick über bewährte Einsteigerstrategien im Optionshandel. Lernen Sie die wichtigsten Grundlagen für einen erfolgreichen Start.</p>
-                        <a href="blog1.html" class="btn btn-primary">Weiterlesen</a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="blog2.png" alt="Risikomanagement im Optionshandel" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">24. April 2025</div>
-                        <h3 class="blog-title">Risikomanagement im Optionshandel</h3>
-                        <p class="blog-excerpt">Erfahren Sie, wie Sie Risiken effektiv kontrollieren und Ihr Kapital schützen können. Diese Strategien helfen Ihnen, auch in volatilen Märkten ruhig zu bleiben.</p>
-                        <a href="blog2.html" class="btn btn-primary">Weiterlesen</a>
-                    </div>
-                </div>
-                
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="blog3.png" alt="Wie man Volatilität für bessere Renditen nutzt" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">20. April 2025</div>
-                        <h3 class="blog-title">Wie man Volatilität für bessere Renditen nutzt</h3>
-                        <p class="blog-excerpt">Volatilität bietet nicht nur Risiken, sondern auch Chancen. Entdecken Sie, wie Sie Marktschwankungen zu Ihrem Vorteil nutzen können.</p>
-                        <a href="blog3.html" class="btn btn-primary">Weiterlesen</a>
-                    </div>
-                </div>
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://source.unsplash.com/800x600/?finance" alt="Deckers Outdoor Corporation Analyse" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">15. April 2025</div>
-                        <h3 class="blog-title">Deckers Outdoor Corporation – Buffett-konforme Analyse</h3>
-                        <p class="blog-excerpt">Umfassende Unternehmensanalyse mit Fokus auf Cashflow, Wettbewerbsvorteile und Bewertung.</p>
-                        <a href="blog4.html" class="btn btn-primary">Weiterlesen</a>
-                    </div>
-                </div>
+    
+<section>
+    <div class="container">
+        <div class="blog-content">
+            <h2>Psychologie im Optionshandel: Emotionen kontrollieren für bessere Ergebnisse</h2>
 
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://source.unsplash.com/800x600/?risk" alt="Absicherungsstrategien im Optionshandel" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">12. April 2025</div>
-                        <h3 class="blog-title">Absicherungsstrategien im Optionshandel</h3>
-                        <p class="blog-excerpt">Wie Protective Puts, Collars und Diversifikation Ihr Portfolio vor großen Verlusten schützen.</p>
-                        <a href="blog5.html" class="btn btn-primary">Weiterlesen</a>
-                    </div>
-                </div>
-
-                <div class="blog-card">
-                    <div class="blog-image">
-                        <img src="https://source.unsplash.com/800x600/?mind" alt="Psychologie im Optionshandel" loading="lazy">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-date">8. April 2025</div>
-                        <h3 class="blog-title">Psychologie im Optionshandel</h3>
-                        <p class="blog-excerpt">Mentale Stärke und klare Routinen als Schlüssel zu konsistenten Trading-Ergebnissen.</p>
-                        <a href="blog6.html" class="btn btn-primary">Weiterlesen</a>
-                    </div>
-                </div>
+            <div class="tip-box">
+                <strong>Executive Summary:</strong> Erfolgreicher Optionshandel erfordert nicht nur Fachwissen, sondern vor allem mentale Stärke. Der Beitrag zeigt, wie Trader ihre Entscheidungen rationalisieren können.
             </div>
+
+            <div style="background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; padding: 1.5rem; margin: 2rem 0; color: #333; font-size: 0.95rem;">
+                <h4 style="color: var(--primary); margin-bottom: 1rem; font-weight: 600;">WICHTIGER RECHTLICHER HINWEIS</h4>
+                <p>Dieser Beitrag stellt keine Anlageberatung dar. Der Handel mit Optionen ist spekulativ und kann zum vollständigen Verlust des eingesetzten Kapitals führen.</p>
+            </div>
+
+            <div class="table-of-contents">
+                <h3>Inhaltsverzeichnis:</h3>
+                <ol>
+                    <li><a href="#emotionen">Warum Emotionen gefährlich sind</a></li>
+                    <li><a href="#trading-plan">Trading-Plan entwickeln</a></li>
+                    <li><a href="#routinen">Disziplin durch Routinen</a></li>
+                    <li><a href="#fehler">Häufige psychologische Fehler</a></li>
+                    <li><a href="#fazit">Fazit</a></li>
+                </ol>
+            </div>
+
+            <h3 id="emotionen">Warum Emotionen gefährlich sind</h3>
+            <p>Gier und Angst gehören zu den größten Feinden erfolgreicher Trader. Emotionale Entscheidungen führen häufig zu überstürzten Käufen oder Panikverkäufen.</p>
+
+            <h3 id="trading-plan">Trading-Plan entwickeln</h3>
+            <p>Ein schriftlich fixierter Plan hilft, rationale Kriterien festzulegen. Er definiert Einstiegs- und Ausstiegssignale sowie das maximale Risiko pro Trade.</p>
+
+            <h3 id="routinen">Disziplin durch Routinen</h3>
+            <p>Regelmäßige Reviews, Checklisten und das Führen eines Trading-Journals fördern Konsequenz und ermöglichen die Analyse vergangener Entscheidungen.</p>
+
+            <h3 id="fehler">Häufige psychologische Fehler</h3>
+            <ul>
+                <li><strong>FOMO:</strong> Aus Angst, eine Chance zu verpassen, werden Positionen ohne klare Strategie eröffnet.</li>
+                <li><strong>Verlustaversion:</strong> Verluste werden zu lange ausgesessen, Gewinne zu früh realisiert.</li>
+                <li><strong>Overtrading:</strong> Zu viele Trades ohne echten Edge erhöhen die Transaktionskosten.</li>
+            </ul>
+
+            <h3 id="fazit">Fazit</h3>
+            <p>Mentale Stärke entsteht durch Vorbereitung und Selbstreflexion. Wer Emotionen kontrolliert, verbessert seine Performance nachhaltig.</p>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <footer>
         <div class="container">
