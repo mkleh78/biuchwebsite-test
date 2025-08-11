@@ -53,11 +53,12 @@
             box-sizing: border-box;
             max-width: 100%;
         }
-        
+
         /* Responsive Typografie für alle Bildschirmgrößen */
         html {
             font-size: 16px;
             font-size: calc(14px + 0.25vw);
+            scroll-behavior: smooth;
         }
         
         body {
@@ -1306,7 +1307,7 @@
                     <li><a href="#reviews">Rezensionen</a></li>
                     <li><a href="#faq">FAQ</a></li>
                 </ul>
-                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menü öffnen" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -1423,72 +1424,77 @@
         <div class="container">
             <h2>REZENSIONEN ZUM BUCH</h2>
             <div class="reviews-slider-container">
-                <div class="slider-arrow prev-arrow" style="background-color: var(--primary);">&#10094;</div>
-                <div class="reviews-slider-wrapper">
+                <button class="slider-arrow prev-arrow" aria-label="Vorherige Rezension" type="button">&#10094;</button>
+                <div class="reviews-slider-wrapper" tabindex="0">
                     <div class="reviews-slider" id="reviewsSlider">
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Dieses Buch überzeugt durch fundierte Erklärungen und praktische Beispiele, die Anlegern helfen, die Welt der Optionen systematisch zu meistern. Mir hat gut gefallen, dass das Buch sehr strukturiert aufgebaut ist."</div>
+                            <div class="review-content">"Fundierte Erklärungen, praxisnahe Beispiele und klarer Aufbau – hilft, die Welt der Optionen systematisch zu meistern."</div>
                             <div class="review-author">- Casimir73</div>
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Super verständlich für Einsteiger aufbereitet um mit dem Thema Optionen durchzustarten. Kann man als Lektüre empfehlen."</div>
-                            <div class="review-author">- Jonas M.</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Dieses Buch besticht durch Klarheit und Praxisnähe. Es erklärt Optionsstrategien verständlich und bietet praktische Beispiele. Der Fokus auf Risikomanagement ist top!"</div>
-                            <div class="review-author">- A. PAZ</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Habe mir das Buch gekauft, da ich mein Portfolio mit Optionen absichern wollte. Das Buch ist sehr systematisch aufgebaut, erklärt die Grundlagen sehr gut und hat mir geholfen, schnell das Wichtige zu erkennen."</div>
+                            <div class="review-content">"Systematisch aufgebaut, erklärt Grundlagen verständlich und hilft, schnell das Wichtige zu erkennen."</div>
                             <div class="review-author">- Conny</div>
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Ein echtes Praxisbuch für clevere Optionsstrategien. Markus Lehleiter schafft eine verständliche und praxisnahe Einführung in den Optionshandel, die nicht nur die Theorie erklärt."</div>
-                            <div class="review-author">- Erl12</div>
+                            <div class="review-content">"Durchdachtes, leicht verständliches Buch, das bei der Umsetzung im Optionshandel hilft."</div>
+                            <div class="review-author">- Steffen Schultze</div>
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Optionen einfach und kompakt erklärt. Dieses Buch erklärt die Welt der Optionen kurz, knapp und knackig; alles Wichtige ist erwähnt inkl. wertvoller Tools."</div>
+                            <div class="review-content">"Klarer, praxisnaher Leitfaden mit Fokus auf Risikomanagement – absolut empfehlenswert."</div>
+                            <div class="review-author">- A. PAZ</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-content">"Kurz, knapp und knackig – alle wichtigen Grundlagen plus nützliche Tools auf den Punkt gebracht."</div>
                             <div class="review-author">- Randolf Larissa</div>
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Das Buch vermittelt umfassend praktische Ratschläge für den Optionshandel. Es beinhaltet viele praktische Ratschläge über die reinen Handelsstrategien hinaus."</div>
-                            <div class="review-author">- HGO</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Kompakt und Gut erklärt. Das Buch ist sehr kompakt und enthält alles wichtige, was man braucht um selbst loszulegen. Alles wird kompakt und gut verständlich erklärt, ist gut durchdacht."</div>
-                            <div class="review-author">- Almir A.</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Dieses Buch ist zeitlos geschrieben und beinhaltet alles, was ich mir zum Thema gewünscht habe. Toll wäre noch eine digitale Version, damit ich es mit Notebook LM besprechen kann."</div>
-                            <div class="review-author">- Peter K</div>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Super Empfehlung für Einsteiger - einfach erklärt, systematischer und seriöser Ansatz! Mir als Einsteiger im Optionshandel hat das Buch super gefallen. Es wird alles strukturiert erklärt."</div>
+                            <div class="review-content">"Strukturiert und realistisch erklärt – idealer Einstieg in den Optionshandel ohne Renditeversprechen."</div>
                             <div class="review-author">- wilkinhoo</div>
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Ein Muss für jede Investorin, die mit klar strukturierten Strategien und verständlicher Theorie den Einstieg in den Optionshandel sucht. Das Buch liest sich verständlich auch für diejenigen, die über kein oder wenig Fachwissen verfügen."</div>
+                            <div class="review-content">"Super verständlich aufbereitet, perfekt um mit dem Thema Optionen durchzustarten."</div>
+                            <div class="review-author">- Jonas M.</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-content">"Kompakt, gut verständlich und durchdacht – enthält alles Wichtige, um selbst loszulegen."</div>
+                            <div class="review-author">- Almir A.</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-content">"Vermittelt klare und praktische Ratschläge über Strategien hinaus und hilft, realistische Erwartungen zu setzen."</div>
+                            <div class="review-author">- HGO</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-content">"Klar strukturierte Strategien und verständliche Theorie – ein Muss für jede Investorin."</div>
                             <div class="review-author">- lebed</div>
                         </div>
                         <div class="review-card">
                             <div class="review-stars">★★★★★</div>
-                            <div class="review-content">"Neue Perspektiven und Möglichkeiten durch Optionen. Dieses Buch hat mir großartige Einblicke in Optionen gegeben und mir völlig neue Möglichkeiten aufgezeigt."</div>
+                            <div class="review-content">"Verständlich und praxisnah – zeigt, wie man Optionen sinnvoll und systematisch nutzt."</div>
+                            <div class="review-author">- Erl12</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-content">"Zeitlos geschrieben und enthält alles, was man für erfolgreichen Optionshandel braucht."</div>
+                            <div class="review-author">- Peter K</div>
+                        </div>
+                        <div class="review-card">
+                            <div class="review-stars">★★★★★</div>
+                            <div class="review-content">"Eröffnet neue Perspektiven und Möglichkeiten durch Optionen."</div>
                             <div class="review-author">- Pouyan Rafiei Fard</div>
                         </div>
                     </div>
                 </div>
-                <div class="slider-arrow next-arrow" style="background-color: var(--primary);">&#10095;</div>
+                <button class="slider-arrow next-arrow" aria-label="Nächste Rezension" type="button">&#10095;</button>
             </div>
         </div>
     </section>
@@ -1603,11 +1609,13 @@
         
         mobileMenuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('show');
-            document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : 'auto';
-            
+            const expanded = navLinks.classList.contains('show');
+            document.body.style.overflow = expanded ? 'hidden' : 'auto';
+            mobileMenuToggle.setAttribute('aria-expanded', expanded);
+
             // Icon ändern
             const icon = mobileMenuToggle.querySelector('i');
-            if (navLinks.classList.contains('show')) {
+            if (expanded) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -1623,7 +1631,8 @@
                 if (window.innerWidth <= 768) {
                     navLinks.classList.remove('show');
                     document.body.style.overflow = 'auto';
-                    
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+
                     // Icon zurücksetzen
                     const icon = mobileMenuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
@@ -1705,9 +1714,17 @@
         prevArrow.addEventListener('click', function() {
             goToSlide(currentSlide - 1);
         });
-        
+
         nextArrow.addEventListener('click', function() {
             goToSlide(currentSlide + 1);
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                prevArrow.click();
+            } else if (e.key === 'ArrowRight') {
+                nextArrow.click();
+            }
         });
         
         // Funktion zum Wechseln der Slides mit zirkulärer Navigation
@@ -1813,7 +1830,8 @@
                 if (window.innerWidth > 768 && navLinks.classList.contains('show')) {
                     navLinks.classList.remove('show');
                     document.body.style.overflow = 'auto';
-                    
+                    mobileMenuToggle.setAttribute('aria-expanded', 'false');
+
                     // Icon zurücksetzen
                     const icon = mobileMenuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
