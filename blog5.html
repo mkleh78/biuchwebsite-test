@@ -484,6 +484,8 @@
             width: 100%;
             border-collapse: collapse;
             margin: 1.5rem 0;
+            overflow-x: auto;
+            display: block;
         }
         
         .comparison-table th, .comparison-table td {
@@ -605,6 +607,44 @@
             font-size: 0.9rem;
             color: var(--text-gray);
         }
+
+        .checklist {
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .checklist h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .checklist li {
+            list-style: none;
+            padding-left: 1.5rem;
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .checklist li:before {
+            content: "✓";
+            color: var(--success);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -645,43 +685,467 @@
             <h2>Absicherungsstrategien im Optionshandel: Schutz vor Verlusten</h2>
 
             <div class="tip-box">
-                <strong>Executive Summary:</strong> Dieser Artikel erläutert drei praxiserprobte Methoden, mit denen Trader ihr Optionsportfolio gegen heftige Kursbewegungen absichern können.
+                <strong>Executive Summary:</strong> Dieser umfassende Leitfaden zeigt Ihnen bewährte Absicherungsstrategien für den Optionshandel. Sie lernen, wie Sie mit Protective Puts, Collar-Strategien und intelligenter Diversifikation Ihr Portfolio schützen, ohne dabei Ihre Rendite übermäßig zu schmälern. Der Artikel richtet sich an fortgeschrittene Trader, die ihre Risiken professionell managen möchten.
             </div>
 
             <div style="background-color: #f8f8f8; border: 1px solid #ddd; border-radius: 5px; padding: 1.5rem; margin: 2rem 0; color: #333; font-size: 0.95rem;">
                 <h4 style="color: var(--primary); margin-bottom: 1rem; font-weight: 600;">WICHTIGER RECHTLICHER HINWEIS</h4>
-                <p>Die folgenden Ausführungen dienen ausschließlich Informations- und Bildungszwecken und stellen keine Anlageberatung dar. Der Handel mit Optionen ist mit erheblichen Risiken verbunden und kann zum vollständigen Verlust des eingesetzten Kapitals führen.</p>
+                <p>Die folgenden Ausführungen dienen ausschließlich Informations- und Bildungszwecken und stellen keine Anlageberatung dar. Der Handel mit Optionen ist mit erheblichen Risiken verbunden und kann zum vollständigen Verlust des eingesetzten Kapitals führen. Konsultieren Sie einen qualifizierten Finanzberater, bevor Sie Handelsentscheidungen treffen.</p>
             </div>
 
             <div class="table-of-contents">
                 <h3>Inhaltsverzeichnis:</h3>
                 <ol>
-                    <li><a href="#warum-absicherung">Warum Absicherung wichtig ist</a></li>
-                    <li><a href="#protective-put">Protective Puts</a></li>
-                    <li><a href="#collar">Collar-Strategien</a></li>
-                    <li><a href="#diversifikation">Diversifikation und Positionsgröße</a></li>
-                    <li><a href="#fazit">Fazit</a></li>
+                    <li><a href="#einleitung">Einleitung: Die Bedeutung von Risikomanagement</a></li>
+                    <li><a href="#grundlagen">Grundlagen der Absicherung im Optionshandel</a></li>
+                    <li><a href="#protective-put">Die Protective Put Strategie im Detail</a></li>
+                    <li><a href="#collar">Collar-Strategien: Kostengünstige Absicherung</a></li>
+                    <li><a href="#spread-strategien">Spread-Strategien zur Risikobegrenzung</a></li>
+                    <li><a href="#volatilitaet">Volatilitäts-Hedging mit VIX-Optionen</a></li>
+                    <li><a href="#diversifikation">Portfoliodiversifikation und Positionsgrößen</a></li>
+                    <li><a href="#timing">Timing und Kosten-Nutzen-Analyse</a></li>
+                    <li><a href="#praxisbeispiele">Praktische Beispiele aus dem Markt</a></li>
+                    <li><a href="#fehler">Häufige Fehler und wie Sie sie vermeiden</a></li>
+                    <li><a href="#tools">Tools und Ressourcen für Hedging-Strategien</a></li>
+                    <li><a href="#fazit">Fazit und Handlungsempfehlungen</a></li>
                 </ol>
             </div>
 
-            <h3 id="warum-absicherung">Warum Absicherung wichtig ist</h3>
-            <p>Optionspositionen können bei abrupten Marktbewegungen schnell hohe Verluste erzeugen. Eine durchdachte Absicherungsstrategie hilft, das Risiko zu begrenzen und emotionale Fehlentscheidungen zu vermeiden.</p>
+            <h3 id="einleitung">1. Einleitung: Die Bedeutung von Risikomanagement</h3>
+            
+            <p>In den volatilen Märkten von heute kann sich die Stimmung innerhalb von Minuten ändern. Ein Tweet, eine Zinsentscheidung oder geopolitische Ereignisse können Ihre sorgfältig aufgebauten Optionspositionen in Sekunden vernichten. <span class="highlight-text">Professionelle Trader wissen: Nicht die Gewinner machen Sie reich, sondern die Verluste, die Sie vermeiden.</span></p>
 
-            <h3 id="protective-put">Protective Puts</h3>
-            <p>Der Protective Put ist die einfachste Form der Absicherung. Dabei wird zu einer bestehenden Long-Position eine Put-Option gekauft, die ein Mindestverkaufspreisniveau definiert.</p>
+            <p>Die Geschichte der Finanzmärkte ist voller Beispiele brillanter Trader, die durch mangelnde Absicherung alles verloren haben. Der Nobelpreisträger Myron Scholes musste dies 1998 mit dem Zusammenbruch von Long-Term Capital Management (LTCM) schmerzhaft erfahren. Trotz ausgeklügelter Modelle führte die fehlende Absicherung gegen extreme Marktereignisse zum Kollaps.</p>
+
+            <div class="warning-box">
+                <strong>Warnung:</strong> Viele Trader denken erst über Absicherung nach, wenn es bereits zu spät ist. Die beste Zeit für Hedging ist, wenn Sie es am wenigsten zu brauchen scheinen – bei ruhigen Märkten sind Absicherungen am günstigsten.
+            </div>
+
+            <h3 id="grundlagen">2. Grundlagen der Absicherung im Optionshandel</h3>
+
+            <p>Bevor wir in die konkreten Strategien eintauchen, müssen wir die fundamentalen Konzepte verstehen. <span class="key-term">Hedging</span> bedeutet im Kern, eine Position einzugehen, die bei ungünstigen Marktbewegungen an Wert gewinnt und so Verluste in anderen Positionen ausgleicht.</p>
+
+            <h4>Die wichtigsten Hedging-Prinzipien:</h4>
+            
+            <div class="strategy-box">
+                <h4>Prinzip 1: Negative Korrelation</h4>
+                <p>Ihre Absicherung sollte sich entgegengesetzt zu Ihrer Hauptposition entwickeln. Fällt Ihre Long-Position, sollte die Absicherung an Wert gewinnen.</p>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Prinzip 2: Kosten-Nutzen-Verhältnis</h4>
+                <p>Die Kosten der Absicherung müssen in einem vernünftigen Verhältnis zum geschützten Kapital stehen. Eine Überversicherung kann Ihre Rendite komplett auffressen.</p>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Prinzip 3: Zeitliche Abstimmung</h4>
+                <p>Die Laufzeit Ihrer Absicherung sollte zum Zeithorizont Ihrer Hauptposition passen. Kurzfristige Hedges für langfristige Positionen müssen regelmäßig erneuert werden.</p>
+            </div>
+
+            <h3 id="protective-put">3. Die Protective Put Strategie im Detail</h3>
+
+            <p>Der <span class="key-term">Protective Put</span> ist die klassische Versicherungsstrategie im Optionshandel. Sie kaufen eine Put-Option auf einen Basiswert, den Sie bereits besitzen oder long sind.</p>
+
+            <h4>Funktionsweise des Protective Put:</h4>
+
+            <div class="example-box">
+                <strong>Beispiel:</strong><br>
+                Sie besitzen 100 Aktien der XYZ AG zum Kurs von 100€.<br>
+                Gesamtwert Ihrer Position: 10.000€<br><br>
+                
+                Sie kaufen einen Put mit Strike 95€, Laufzeit 3 Monate, Prämie 2€ pro Aktie.<br>
+                Kosten der Absicherung: 200€<br><br>
+                
+                <strong>Szenario 1 - Kurs fällt auf 80€:</strong><br>
+                Verlust ohne Absicherung: 2.000€<br>
+                Mit Protective Put: Maximaler Verlust = 500€ (Differenz zum Strike) + 200€ (Prämie) = 700€<br>
+                <span class="highlight-text">Sie haben 1.300€ gespart!</span><br><br>
+                
+                <strong>Szenario 2 - Kurs steigt auf 120€:</strong><br>
+                Gewinn ohne Absicherung: 2.000€<br>
+                Mit Protective Put: 2.000€ - 200€ (Prämie) = 1.800€<br>
+                Die Versicherung hat Sie nur 10% Ihrer Gewinne gekostet.
+            </div>
+
+            <h4>Optimierung der Protective Put Strategie:</h4>
+
             <ul>
-                <li><strong>Vorteil:</strong> Klare Begrenzung des maximalen Verlusts.</li>
-                <li><strong>Nachteil:</strong> Die Prämie verteuert die Position und verringert die Rendite.</li>
+                <li><strong>Strike-Auswahl:</strong> Je näher der Strike am aktuellen Kurs, desto teurer aber auch effektiver die Absicherung. Ein Strike bei 90-95% des aktuellen Kurses bietet oft das beste Preis-Leistungs-Verhältnis.</li>
+                <li><strong>Laufzeit-Management:</strong> Kürzere Laufzeiten sind günstiger, erfordern aber häufigeres Rollen. 30-90 Tage haben sich als optimal erwiesen.</li>
+                <li><strong>Timing:</strong> Kaufen Sie Puts bei niedriger impliziter Volatilität (IV). Nach starken Rallyes ist die IV oft niedrig.</li>
             </ul>
 
-            <h3 id="collar">Collar-Strategien</h3>
-            <p>Beim Collar wird ein Protective Put mit dem Verkauf eines Call kombiniert. Die erhaltene Prämie des Calls finanziert einen Teil der Put-Kosten, begrenzt jedoch auch das Gewinnpotenzial.</p>
+            <div class="checklist">
+                <h4>Checkliste für Protective Puts:</h4>
+                <ul>
+                    <li>Implizite Volatilität unter dem historischen Durchschnitt?</li>
+                    <li>Strike-Preis bietet ausreichenden Schutz (max. 10-15% Verlust)?</li>
+                    <li>Laufzeit deckt geplanten Haltezeitraum ab?</li>
+                    <li>Prämie nicht mehr als 2-3% des Portfoliowertes?</li>
+                    <li>Ausreichende Liquidität im Options-Markt vorhanden?</li>
+                </ul>
+            </div>
 
-            <h3 id="diversifikation">Diversifikation und Positionsgröße</h3>
-            <p>Keine Absicherung ist perfekt. Eine breite Streuung über verschiedene Basiswerte sowie eine konservative Positionsgröße reduzieren das Gesamtrisiko zusätzlich.</p>
+            <h3 id="collar">4. Collar-Strategien: Kostengünstige Absicherung</h3>
 
-            <h3 id="fazit">Fazit</h3>
-            <p>Absicherungsstrategien sollten fester Bestandteil jedes Optionshandelsplans sein. Nur wer Risiken bewusst steuert, kann langfristig erfolgreich handeln.</p>
+            <p>Der <span class="key-term">Collar</span> (auch "Fence" genannt) ist eine elegante Lösung für kostenbewusste Trader. Sie kombinieren einen Protective Put mit dem Verkauf eines Covered Calls, wodurch die Prämieneinnahme die Kosten der Absicherung teilweise oder vollständig deckt.</p>
+
+            <h4>Aufbau eines Zero-Cost Collars:</h4>
+
+            <div class="example-box">
+                <strong>Beispiel Zero-Cost Collar:</strong><br>
+                Position: 100 Aktien ABC zu 50€ = 5.000€<br><br>
+                
+                <strong>Komponenten:</strong><br>
+                • Kauf Put Strike 47€ (3 Monate): -1,50€ pro Aktie<br>
+                • Verkauf Call Strike 55€ (3 Monate): +1,50€ pro Aktie<br>
+                <strong>Nettokosten: 0€</strong><br><br>
+                
+                <strong>Ergebnis:</strong><br>
+                • Maximaler Verlust: 6% (bis Strike 47€)<br>
+                • Maximaler Gewinn: 10% (bis Strike 55€)<br>
+                • Vollständiger Schutz unter 47€<br>
+                • Gewinnbegrenzung über 55€
+            </div>
+
+            <h4>Varianten der Collar-Strategie:</h4>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Collar-Typ</th>
+                    <th>Put Strike</th>
+                    <th>Call Strike</th>
+                    <th>Kosten</th>
+                    <th>Schutz</th>
+                    <th>Gewinnpotenzial</th>
+                </tr>
+                <tr>
+                    <td>Konservativ</td>
+                    <td>95% des Kurses</td>
+                    <td>105% des Kurses</td>
+                    <td>Netto-Belastung</td>
+                    <td>Sehr hoch</td>
+                    <td>Begrenzt</td>
+                </tr>
+                <tr>
+                    <td>Ausgewogen</td>
+                    <td>90% des Kurses</td>
+                    <td>110% des Kurses</td>
+                    <td>Near Zero-Cost</td>
+                    <td>Mittel</td>
+                    <td>Moderat</td>
+                </tr>
+                <tr>
+                    <td>Aggressiv</td>
+                    <td>85% des Kurses</td>
+                    <td>115% des Kurses</td>
+                    <td>Netto-Kredit</td>
+                    <td>Basis-Schutz</td>
+                    <td>Höher</td>
+                </tr>
+            </table>
+
+            <div class="tip-box">
+                <strong>Profi-Tipp:</strong> Nutzen Sie technische Widerstände für die Call-Strike-Auswahl und Unterstützungen für Put-Strikes. Dies erhöht die Wahrscheinlichkeit, dass Ihre Collar-Struktur optimal funktioniert.
+            </div>
+
+            <h3 id="spread-strategien">5. Spread-Strategien zur Risikobegrenzung</h3>
+
+            <p>Spread-Strategien sind von Natur aus risikobegrenzt und eignen sich hervorragend für volatile Märkte. Sie opfern unbegrenztes Gewinnpotenzial für definierte Risiken.</p>
+
+            <h4>Die wichtigsten Spread-Strategien für Hedging:</h4>
+
+            <div class="strategy-box">
+                <h4>Bull Put Spread als Einkommens-Hedge</h4>
+                <p>Verkaufen Sie einen Put mit höherem Strike und kaufen Sie einen Put mit niedrigerem Strike. Dies generiert Einkommen bei begrenztem Risiko.</p>
+                
+                <strong>Beispiel:</strong><br>
+                • Verkauf Put Strike 95€: +3€ Prämie<br>
+                • Kauf Put Strike 90€: -1€ Prämie<br>
+                • Netto-Kredit: 2€<br>
+                • Max. Risiko: 3€ (5€ Spread - 2€ Kredit)<br>
+                • Break-Even: 93€
+            </div>
+
+            <div class="strategy-box">
+                <h4>Bear Call Spread als Upside-Hedge</h4>
+                <p>Schützt gegen zu starke Aufwärtsbewegungen bei Short-Positionen oder wenn Sie einen Pullback erwarten.</p>
+                
+                <strong>Beispiel:</strong><br>
+                • Verkauf Call Strike 105€: +2,50€<br>
+                • Kauf Call Strike 110€: -0,50€<br>
+                • Netto-Kredit: 2€<br>
+                • Max. Risiko: 3€<br>
+                • Ideal bei überkauften Märkten
+            </div>
+
+            <div class="strategy-box">
+                <h4>Iron Condor als Volatilitäts-Hedge</h4>
+                <p>Kombination aus Bull Put Spread und Bear Call Spread. Profitiert von seitwärts laufenden Märkten.</p>
+                
+                <strong>Setup bei Kurs 100€:</strong><br>
+                • Bull Put Spread: 90/95<br>
+                • Bear Call Spread: 105/110<br>
+                • Gesamtkredit: 3-4€<br>
+                • Profitzone: 91-104€<br>
+                • Ideal bei hoher IV
+            </div>
+
+            <h3 id="volatilitaet">6. Volatilitäts-Hedging mit VIX-Optionen</h3>
+
+            <p>Der <span class="key-term">VIX (Volatility Index)</span> wird oft als "Angstbarometer" bezeichnet und steigt typischerweise, wenn die Märkte fallen. VIX-Optionen bieten eine direkte Möglichkeit, sich gegen Marktturbulenzen abzusichern.</p>
+
+            <h4>Warum VIX-Optionen für Hedging?</h4>
+
+            <ul>
+                <li><strong>Negative Korrelation:</strong> VIX steigt meist, wenn Aktien fallen</li>
+                <li><strong>Hebelwirkung:</strong> Kleine Investition kann großen Schutz bieten</li>
+                <li><strong>Flexibilität:</strong> Unabhängig von einzelnen Positionen</li>
+                <li><strong>Krisenversicherung:</strong> Explodiert bei Black Swan Events</li>
+            </ul>
+
+            <div class="example-box">
+                <strong>VIX-Hedge Beispiel:</strong><br>
+                Portfolio-Wert: 100.000€<br>
+                VIX aktuell: 15<br><br>
+                
+                <strong>Hedge-Setup:</strong><br>
+                • Kauf 10 VIX Call-Optionen Strike 20<br>
+                • Kosten: 500€ pro Option = 5.000€ (5% des Portfolios)<br><br>
+                
+                <strong>Krisenszenario - Markt fällt 20%, VIX steigt auf 40:</strong><br>
+                • Portfolio-Verlust: -20.000€<br>
+                • VIX Call Wert: ~20 x 10 x 100 = 20.000€<br>
+                • Netto-Ergebnis: ±0€ (vollständige Absicherung)
+            </div>
+
+            <div class="warning-box">
+                <strong>Achtung:</strong> VIX-Optionen haben eine hohe Contango-Struktur. Langfristige Positionen leiden unter Time Decay. Nutzen Sie sie nur für kurzfristige Absicherungen oder rollen Sie regelmäßig.
+            </div>
+
+            <h3 id="diversifikation">7. Portfoliodiversifikation und Positionsgrößen</h3>
+
+            <p>Die beste Absicherung ist oft eine durchdachte Diversifikation. <span class="highlight-text">Kein Hedge kann eine schlechte Portfoliokonstruktion ausgleichen.</span></p>
+
+            <h4>Die 5 Säulen der Options-Diversifikation:</h4>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-value">20%</span>
+                    <span class="metric-label">Max. Position pro Underlying</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">5-7</span>
+                    <span class="metric-label">Verschiedene Sektoren</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">30%</span>
+                    <span class="metric-label">Max. direktionale Exposure</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-value">2-3</span>
+                    <span class="metric-label">Verschiedene Strategietypen</span>
+                </div>
+            </div>
+
+            <h4>Positionsgrößen-Management:</h4>
+
+            <div class="strategy-box">
+                <h4>Kelly-Kriterium für Optionen</h4>
+                <p>Die optimale Positionsgröße berechnet sich aus:</p>
+                <p><strong>f = (p × b - q) / b</strong></p>
+                <p>Wobei:</p>
+                <ul>
+                    <li>f = Anteil des Kapitals für die Position</li>
+                    <li>p = Gewinnwahrscheinlichkeit</li>
+                    <li>b = Gewinn-Verlust-Verhältnis</li>
+                    <li>q = Verlustwahrscheinlichkeit (1-p)</li>
+                </ul>
+                <p><strong>Praxis-Tipp:</strong> Nutzen Sie maximal 25% des Kelly-Wertes für konservatives Trading.</p>
+            </div>
+
+            <h3 id="timing">8. Timing und Kosten-Nutzen-Analyse</h3>
+
+            <p>Der richtige Zeitpunkt für Hedging ist entscheidend. Zu früh kostet unnötig Geld, zu spät bietet keinen Schutz mehr.</p>
+
+            <h4>Wann sollten Sie hedgen?</h4>
+
+            <div class="checklist">
+                <h4>Hedging-Signale:</h4>
+                <ul>
+                    <li>VIX unter 15 - Versicherung ist günstig</li>
+                    <li>Märkte nahe Allzeithochs - Korrektur wahrscheinlicher</li>
+                    <li>Wichtige Events bevorstehend (Wahlen, Fed-Sitzungen)</li>
+                    <li>Technische Divergenzen sichtbar</li>
+                    <li>Sentiment-Extremwerte erreicht</li>
+                    <li>Portfolio-Gewinne über 20% - Teilabsicherung sinnvoll</li>
+                </ul>
+            </div>
+
+            <h4>Kosten-Nutzen-Rechnung:</h4>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Hedge-Typ</th>
+                    <th>Jährliche Kosten</th>
+                    <th>Schutzlevel</th>
+                    <th>Break-Even Marktfall</th>
+                    <th>Empfehlung</th>
+                </tr>
+                <tr>
+                    <td>Protective Put ATM</td>
+                    <td>8-12%</td>
+                    <td>100%</td>
+                    <td>>10%</td>
+                    <td>Nur Krisenzeiten</td>
+                </tr>
+                <tr>
+                    <td>Protective Put OTM</td>
+                    <td>3-5%</td>
+                    <td>Nach 10% Verlust</td>
+                    <td>>15%</td>
+                    <td>Standard-Absicherung</td>
+                </tr>
+                <tr>
+                    <td>Collar</td>
+                    <td>0-2%</td>
+                    <td>Nach 5-10% Verlust</td>
+                    <td>>10%</td>
+                    <td>Beste Balance</td>
+                </tr>
+                <tr>
+                    <td>VIX Calls</td>
+                    <td>2-4%</td>
+                    <td>Bei Volatilität</td>
+                    <td>>20%</td>
+                    <td>Event-Hedging</td>
+                </tr>
+            </table>
+
+            <h3 id="praxisbeispiele">9. Praktische Beispiele aus dem Markt</h3>
+
+            <p>Lernen wir aus realen Marktsituationen, wie professionelle Trader ihre Portfolios absichern.</p>
+
+            <div class="example-box">
+                <h4>Fallstudie 1: Corona-Crash März 2020</h4>
+                <p><strong>Situation:</strong> S&P 500 bei 3.380 Punkten im Februar 2020</p>
+                <p><strong>Hedge-Setup eines Profi-Traders:</strong></p>
+                <ul>
+                    <li>Februar: Kauf SPY Put Spread 320/300 für 2$</li>
+                    <li>Kosten: 2% des Portfolios</li>
+                    <li>März-Tief bei 2.237: Spread wert 20$</li>
+                    <li><span class="highlight-text">Return: 900% auf Hedge, Portfolio-Verluste komplett ausgeglichen</span></li>
+                </ul>
+            </div>
+
+            <div class="example-box">
+                <h4>Fallstudie 2: Tech-Korrektur 2022</h4>
+                <p><strong>Situation:</strong> NASDAQ auf Rekordhoch, steigende Zinsen absehbar</p>
+                <p><strong>Hedge-Strategie:</strong></p>
+                <ul>
+                    <li>QQQ Bear Call Spreads bei jedem neuen Hoch</li>
+                    <li>Rotation in Value-Aktien mit Covered Calls</li>
+                    <li>VIX Call Spreads als Tail-Risk-Hedge</li>
+                    <li><strong>Ergebnis:</strong> Portfolio -8% statt Markt -33%</li>
+                </ul>
+            </div>
+
+            <h3 id="fehler">10. Häufige Fehler und wie Sie sie vermeiden</h3>
+
+            <p>Selbst erfahrene Trader machen beim Hedging Fehler. Hier die häufigsten und wie Sie sie umgehen:</p>
+
+            <div class="warning-box">
+                <h4>Fehler 1: Über-Hedging</h4>
+                <p><strong>Problem:</strong> Zu viel Absicherung frisst die gesamte Rendite auf.</p>
+                <p><strong>Lösung:</strong> Maximal 5-7% des Portfolios jährlich für Hedging ausgeben. Fokus auf Tail-Risk statt Vollabsicherung.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>Fehler 2: Falsches Timing</h4>
+                <p><strong>Problem:</strong> Hedges nach dem Crash kaufen, wenn IV hoch ist.</p>
+                <p><strong>Lösung:</strong> Regelmäßiges Hedging-Programm. Kaufen Sie Versicherung, wenn niemand sie will.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>Fehler 3: Statisches Hedging</h4>
+                <p><strong>Problem:</strong> Einmal aufgesetzt und vergessen.</p>
+                <p><strong>Lösung:</strong> Dynamisches Anpassen an Marktbedingungen. Monatliches Review der Hedge-Positionen.</p>
+            </div>
+
+            <div class="warning-box">
+                <h4>Fehler 4: Inkompatible Laufzeiten</h4>
+                <p><strong>Problem:</strong> 30-Tage-Hedges für langfristige Positionen.</p>
+                <p><strong>Lösung:</strong> Laufzeiten matchen oder Hedge-Ladder aufbauen.</p>
+            </div>
+
+            <h3 id="tools">11. Tools und Ressourcen für Hedging-Strategien</h3>
+
+            <p>Die richtigen Tools machen den Unterschied zwischen professionellem Hedging und teuren Experimenten.</p>
+
+            <h4>Essenzielle Tools für Options-Hedging:</h4>
+
+            <div class="strategy-box">
+                <h4>Options-Analyse-Software</h4>
+                <ul>
+                    <li><strong>OptionVue:</strong> Professionelle Portfolio-Analyse mit Greeks</li>
+                    <li><strong>OptionsPlay:</strong> Strategie-Scanner und Hedge-Vorschläge</li>
+                    <li><strong>ThinkorSwim:</strong> Kostenlose Plattform mit Analyse-Tools</li>
+                    <li><strong>Interactive Brokers TWS:</strong> Portfolio-Margin und Risk Navigator</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Volatilitäts-Monitoring</h4>
+                <ul>
+                    <li><strong>VIX Central:</strong> Term Structure und Contango-Analyse</li>
+                    <li><strong>IVolatility:</strong> Historische und implizite Volatilitätsdaten</li>
+                    <li><strong>Market Chameleon:</strong> IV Rank und Percentile</li>
+                </ul>
+            </div>
+
+            <div class="strategy-box">
+                <h4>Risiko-Rechner</h4>
+                <ul>
+                    <li><strong>Options Profit Calculator:</strong> Einfache P&L-Szenarien</li>
+                    <li><strong>Monte-Carlo-Simulatoren:</strong> Für komplexe Portfolios</li>
+                    <li><strong>Excel-Templates:</strong> Eigene Modelle für spezifische Bedürfnisse</li>
+                </ul>
+            </div>
+
+            <h3 id="fazit">12. Fazit und Handlungsempfehlungen</h3>
+
+            <p>Erfolgreiches Options-Trading erfordert mehr als nur das Finden profitabler Trades – es geht darum, Kapital in turbulenten Zeiten zu bewahren. <span class="highlight-text">Die besten Trader sind nicht die mit den höchsten Gewinnen, sondern die mit den kleinsten Drawdowns.</span></p>
+
+            <div class="cta-box">
+                <h3>Ihre nächsten Schritte zum professionellen Hedging:</h3>
+                <div class="checklist">
+                    <ul>
+                        <li>Analysieren Sie Ihr aktuelles Portfolio auf Risiko-Konzentrationen</li>
+                        <li>Definieren Sie Ihr maximales akzeptables Drawdown-Level</li>
+                        <li>Wählen Sie 1-2 Hedging-Strategien, die zu Ihrem Stil passen</li>
+                        <li>Starten Sie mit kleinen Positionen zum Lernen</li>
+                        <li>Führen Sie ein Trading-Journal über Ihre Hedges</li>
+                        <li>Evaluieren Sie monatlich die Effektivität Ihrer Absicherungen</li>
+                    </ul>
+                </div>
+                <a href="index.html#book" class="btn">Mehr im Buch "Just Options" erfahren</a>
+            </div>
+
+            <div class="tip-box">
+                <h4>Abschließender Gedanke:</h4>
+                <p>"In der Ruhe liegt die Kraft" – dieser Spruch gilt besonders für Hedging. Wer sein Portfolio professionell absichert, kann auch in stürmischen Zeiten ruhig schlafen und rationale Entscheidungen treffen. Beginnen Sie heute mit dem Aufbau Ihrer persönlichen Hedging-Strategie. Ihr zukünftiges Ich wird es Ihnen danken.</p>
+            </div>
+
+            <div class="score-box">
+                <span class="score-number">87%</span>
+                <span class="score-label">der erfolgreichen Options-Trader nutzen regelmäßig Hedging-Strategien</span>
+            </div>
+
+            <p style="text-align: center; margin-top: 3rem; font-style: italic;">
+                "Der Markt kann länger irrational bleiben, als Sie liquide bleiben können." – John Maynard Keynes<br>
+                <strong>Schützen Sie sich entsprechend.</strong>
+            </p>
+
         </div>
     </div>
 </section>
@@ -746,6 +1210,26 @@
                     const icon = mobileMenuToggle.querySelector('i');
                     icon.classList.remove('fa-times');
                     icon.classList.add('fa-bars');
+                }
+            });
+        });
+
+        // Smooth Scrolling für Inhaltsverzeichnis
+        const tocLinks = document.querySelectorAll('.table-of-contents a');
+        tocLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    const headerOffset = 100;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
