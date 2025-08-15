@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Covered Calls Schritt für Schritt: Zusatzeinnahmen mit Aktien generieren</title>
+    <meta name="description" content="Lernen Sie, wie Sie mit Covered Calls regelmäßige Prämien erzielen und Ihr Aktienportfolio effizienter nutzen.">
+    <link rel="icon" href="Favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"><img src="Logo.jpg" alt="Just Options Logo"></a>
+                </div>
+                <div id="mobileMenuToggle" class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="navLinks" class="nav-links">
+                    <li><a href="index.html#book">Buch</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#author">Autor</a></li>
+                    <li><a href="index.html#reviews">Rezensionen</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Covered Calls Schritt für Schritt</h1>
+            <p>Zusatzeinnahmen durch den Verkauf von Call-Optionen auf eigene Aktien.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="blog-content">
+                <h2>Covered Calls Schritt für Schritt: Zusatzeinnahmen mit Aktien generieren</h2>
+                <p>Covered Calls sind eine beliebte Strategie, um mit bestehenden Aktienpositionen zusätzliche Einnahmen zu erzielen. Durch den Verkauf von Call-Optionen verpflichten Sie sich, Ihre Aktien zu einem festgelegten Preis zu verkaufen und erhalten dafür eine Optionsprämie.</p>
+
+                <h3>Was ist ein Covered Call?</h3>
+                <p>Bei einem Covered Call besitzen Sie die zugrunde liegende Aktie und verkaufen gleichzeitig eine Call-Option darauf. Dadurch ist die Position "gedeckt" und das Risiko begrenzt.</p>
+
+                <h3>So setzen Sie die Strategie um</h3>
+                <p>Wählen Sie eine Aktie aus Ihrem Portfolio, legen Sie einen Strike-Preis leicht über dem aktuellen Kurs fest und verkaufen Sie eine Call-Option mit kurzer Laufzeit. Die eingenommene Prämie bietet einen Puffer gegen Kursrückgänge.</p>
+
+                <h3>Vorteile und Risiken</h3>
+                <p>Covered Calls generieren laufende Einnahmen und senken die Volatilität des Portfolios. Gleichzeitig geben Sie jedoch das Aufwärtspotenzial der Aktie oberhalb des Strike-Preises ab.</p>
+
+                <h3>Fazit</h3>
+                <p>Mit Covered Calls können Sie Ihre Rendite erhöhen, ohne zusätzliche Mittel einzusetzen. Eine ausführliche Anleitung und weitere Strategien finden Sie in <a href="index.html#book">meinem Buch</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="Logo.jpg" alt="Just Options Logo - Optionen strategisch nutzen" style="max-width: 120px; height: auto;" loading="lazy">
+                </div>
+                <ul class="footer-links">
+                    <li><a href="index.html#book">Das Buch</a></li>
+                    <li><a href="index.html#author">Autor</a></li>
+                    <li><a href="index.html#reviews">Rezensionen</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="impressum.html" target="_blank" rel="noopener">Impressum</a></li>
+                    <li><a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/lehleiter/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/just_options.de/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/just_options_com" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Lehleiter Investment Training. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+            document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : 'auto';
+
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        const navLinkItems = navLinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
