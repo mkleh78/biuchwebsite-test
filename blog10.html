@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit-no">
+    <title>Einnahmen mit Stillhalterstrategien: Cash Secured Puts und mehr</title>
+    <meta name="description" content="Verdienen Sie regelmäßige Optionsprämien durch den Verkauf von Cash Secured Puts und anderen Stillhalterstrategien.">
+    <link rel="icon" href="Favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"><img src="Logo.jpg" alt="Just Options Logo"></a>
+                </div>
+                <div id="mobileMenuToggle" class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="navLinks" class="nav-links">
+                    <li><a href="index.html#book">Buch</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#author">Autor</a></li>
+                    <li><a href="index.html#reviews">Rezensionen</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Einnahmen mit Stillhalterstrategien</h1>
+            <p>Regelmäßige Prämien durch den Verkauf von Optionen.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="blog-content">
+                <h2>Einnahmen mit Stillhalterstrategien: Cash Secured Puts und mehr</h2>
+                <p>Stillhalterstrategien setzen darauf, Optionen zu verkaufen statt zu kaufen. Ziel ist es, Prämien zu vereinnahmen und von Zeitwertverfall zu profitieren.</p>
+
+                <h3>Cash Secured Put</h3>
+                <p>Beim Verkauf eines Cash Secured Put verpflichten Sie sich, eine Aktie zu einem festgelegten Preis zu kaufen. Sie hinterlegen den entsprechenden Betrag als Sicherheit und erhalten dafür eine attraktive Prämie.</p>
+
+                <h3>Weitere Strategien</h3>
+                <p>Neben dem Cash Secured Put gehören Covered Calls, Iron Condors und Credit Spreads zu beliebten Stillhalterstrategien. Sie bieten unterschiedliche Chancen-Risiko-Profile und lassen sich flexibel an Marktbedingungen anpassen.</p>
+
+                <h3>Risiken beachten</h3>
+                <p>Der Verkauf von Optionen kann bei starken Marktbewegungen zu Verlusten führen. Achten Sie auf ausreichende Margin und verwenden Sie strikte Risikoregeln.</p>
+
+                <h3>Fazit</h3>
+                <p>Stillhalterstrategien ermöglichen stetige Einnahmen, erfordern aber Disziplin und Kapital. Ausführliche Schritt-für-Schritt-Anleitungen bietet <a href="index.html#book">mein Buch</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="Logo.jpg" alt="Just Options Logo - Optionen strategisch nutzen" style="max-width: 120px; height: auto;" loading="lazy">
+                </div>
+                <ul class="footer-links">
+                    <li><a href="index.html#book">Das Buch</a></li>
+                    <li><a href="index.html#author">Autor</a></li>
+                    <li><a href="index.html#reviews">Rezensionen</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="impressum.html" target="_blank" rel="noopener">Impressum</a></li>
+                    <li><a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/lehleiter/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/just_options.de/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/just_options_com" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Lehleiter Investment Training. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+            document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : 'auto';
+
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        const navLinkItems = navLinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

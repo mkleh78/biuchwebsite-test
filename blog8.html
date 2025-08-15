@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Portfolio-Absicherung mit Put-Optionen: Der ultimative Leitfaden</title>
+    <meta name="description" content="So schützen Sie Ihr Depot effektiv mit Put-Optionen und reduzieren Verlustrisiken.">
+    <link rel="icon" href="Favicon.jpg" type="image/jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="index.html"><img src="Logo.jpg" alt="Just Options Logo"></a>
+                </div>
+                <div id="mobileMenuToggle" class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="navLinks" class="nav-links">
+                    <li><a href="index.html#book">Buch</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="index.html#author">Autor</a></li>
+                    <li><a href="index.html#reviews">Rezensionen</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <div class="container">
+            <h1>Portfolio-Absicherung mit Put-Optionen</h1>
+            <p>So schützen Sie Ihr Depot vor starken Kursverlusten.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="blog-content">
+                <h2>Portfolio-Absicherung mit Put-Optionen: Der ultimative Leitfaden</h2>
+                <p>Put-Optionen bieten Anlegern die Möglichkeit, sich gegen fallende Kurse abzusichern. Durch den Kauf eines Puts erhalten Sie das Recht, eine Aktie zu einem festgelegten Preis zu verkaufen.</p>
+
+                <h3>Wie funktioniert eine Put-Option?</h3>
+                <p>Eine Put-Option steigt im Wert, wenn der Kurs des Basiswerts fällt. Sie eignet sich daher ideal zur Absicherung bestehender Positionen oder eines gesamten Portfolios.</p>
+
+                <h3>Die richtige Laufzeit wählen</h3>
+                <p>Die Laufzeit der Option sollte den Zeitraum abdecken, den Sie absichern möchten. Kürzere Laufzeiten sind günstiger, bieten aber weniger Schutz.</p>
+
+                <h3>Kosten und Nutzen abwägen</h3>
+                <p>Der Schutz durch Puts ist nicht kostenlos. Achten Sie darauf, dass die gezahlte Prämie in einem vernünftigen Verhältnis zum Risiko steht.</p>
+
+                <h3>Fazit</h3>
+                <p>Put-Optionen sind ein wirkungsvolles Instrument zur Depotabsicherung. Mehr Strategien und Beispiele finden Sie in <a href="index.html#book">meinem Buch</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo-container">
+                    <img src="Logo.jpg" alt="Just Options Logo - Optionen strategisch nutzen" style="max-width: 120px; height: auto;" loading="lazy">
+                </div>
+                <ul class="footer-links">
+                    <li><a href="index.html#book">Das Buch</a></li>
+                    <li><a href="index.html#author">Autor</a></li>
+                    <li><a href="index.html#reviews">Rezensionen</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                    <li><a href="impressum.html" target="_blank" rel="noopener">Impressum</a></li>
+                    <li><a href="datenschutz.html" target="_blank" rel="noopener">Datenschutz</a></li>
+                </ul>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/lehleiter/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/just_options.de/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/just_options_com" target="_blank" rel="noopener"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Lehleiter Investment Training. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('show');
+            document.body.style.overflow = navLinks.classList.contains('show') ? 'hidden' : 'auto';
+
+            const icon = mobileMenuToggle.querySelector('i');
+            if (navLinks.classList.contains('show')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        const navLinkItems = navLinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
